@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* LMSWave Color System */
+    --background: 0 0% 100%;
+    --foreground: 210 100% 15%;
+    
+    /* Primary: Deep Navy #002350 */
+    --primary: 210 100% 15%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 25%;
+    
+    /* Golden Yellow #ffca03 */
+    --golden: 46 100% 51%;
+    --golden-foreground: 210 100% 15%;
+    
+    /* Deep Red #911f1e */
+    --danger: 1 66% 34%;
+    --danger-foreground: 0 0% 100%;
+    
+    /* Bright Cyan #009dd2 */
+    --cyan: 195 100% 41%;
+    --cyan-foreground: 0 0% 100%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 210 100% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 100% 15%;
+    
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 210 100% 15%;
+    
+    --muted: 210 30% 96%;
+    --muted-foreground: 210 20% 45%;
+    
+    --accent: 195 100% 41%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 1 66% 34%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 210 100% 15%;
+    
+    --radius: 1rem;
+    
+    /* Glassmorphism */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 210 25% 88% / 0.2;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 15%), hsl(195 100% 41%));
+    --gradient-golden: linear-gradient(135deg, hsl(46 100% 51%), hsl(46 100% 61%));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 100% / 0), hsl(210 100% 15% / 0.05));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 24px hsl(210 100% 15% / 0.08);
+    --shadow-glass: 0 8px 32px hsl(210 100% 15% / 0.12);
+    
+    /* Sidebar */
+    --sidebar-background: 210 100% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 195 100% 41%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 100% 20%;
+    --sidebar-ring: 195 100% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-glass;
+  }
+  
+  .glass-dark {
+    @apply bg-primary/10 backdrop-blur-xl border border-primary/20;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-golden {
+    background: var(--gradient-golden);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+}
